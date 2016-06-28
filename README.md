@@ -1,3 +1,3 @@
-#Algorithms on Coursera
+# Algorithms
 
-This repo contains code to the lectures, assignments and interview questions
+All algorithms and data structures implemented in Java, Python and C++ (in progress)
