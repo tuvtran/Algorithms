@@ -184,9 +184,20 @@ The second wawy to create an array is to use the **new** operator.
 The **new** operator returns a reference to the new array, typically this would be assigned to an array variable. For example, the following statement declares an array variable named _measurements_, and immediately assigns it a new array of 1000 cells.
 ```java
 double[] = measurements = new double[1000];
+```
 
 ### 4.4 Enum Types:
 
 Enum types are those that are only allowed to take values that come from a specified set of names. They are declared as follows:
-> _modifier **enum** name{ valueName0, valueName1, ..., valueNameN-1 };_
+> _modifier **enum** name{ valueName0, valueName1, ..., valueNameN-1 };_  
+
+where the _modifier_ can be blank, **public**, **protected** or **private**
+
+Example:
+```java
+public enum Day { MON, TUE, WED, THU, FRI, SAT, SUN };
+```
+Once defined, Day becomes an official type and we may declare variables or parameters with type Day. A variable of that type can be declared as:
+```java
+Day today;
 ```
