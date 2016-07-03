@@ -1,5 +1,11 @@
 # A Java Primer
 
+###### Table of contents:
+1. [Hello world program](#1-hello-world-program)
+2. [Base type](#2-base-type)
+3. [Classes and objects](#3-classes-and-objects)
+4. [Strings, Wrappers, Arrays and Enum Types](#4-strings-wrappers-arrays-and-enum-types)
+
 ## 1. Hello world program:
 
 This is the hello world program written in Java
@@ -134,3 +140,16 @@ term.append(s); // append string s to the end of the sequence.
 term.reverse(); // reverse the current sequence
 term.toString(); // return a traditional String sequence based on the current characger sequence
 ```
+
+### 4.2. Wrappers Types:
+
+| Base Type | Class Name 	| Creation Example			| Access Example	|
+|-----------| -------------	|---------------------------|-------------------|
+|boolean	| Boolean		| obj = new Boolean(true) 	|obj.booleanValue() |
+|char		| Character		| obj = new Character('Z') 	|obj.charValue() 	|
+|byte		| Byte			| obj = new Byte((byte) 34) |obj.byteValue() 	|
+|short		| Short			| obj = new Short(100) 		|obj.shortValue() 	|
+|int		| Integer		| obj = new Integer(1045) 	|obj.intValue() 	|
+|long		| Long			| obj = new Long(10849L) 	|obj.longValue() 	|
+|float		| Float			| obj = new Float(3.934F) 	|obj.floatValue() 	|
+|double		| Double		| obj = new Double(3.934) 	|obj.doubleValue()	|
