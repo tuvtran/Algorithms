@@ -134,11 +134,11 @@ An important trait of Java's String class is that its instances are **_immutable
 
 StringBuilder class, on the other hand, provides **_mutable_** strings with the following methods:
 ```java
-term.setCharAt(k, c); // Change the character at index k to character c
-term.insert(k, s); // Insert a copy of string _s_ starting at index _k_ of the sequence, shifting existing characters further back to make room.
-term.append(s); // append string s to the end of the sequence.
-term.reverse(); // reverse the current sequence
-term.toString(); // return a traditional String sequence based on the current characger sequence
+term.setCharAt(k, c); 	// Change the character at index k to character c
+term.insert(k, s); 		// Insert a copy of string _s_ starting at index _k_ of the sequence, shifting existing characters further back to make room.
+term.append(s); 		// append string s to the end of the sequence.
+term.reverse(); 		// reverse the current sequence
+term.toString(); 		// return a traditional String sequence based on the current characger sequence
 ```
 
 ### 4.2. Wrappers Types:
@@ -153,3 +153,40 @@ term.toString(); // return a traditional String sequence based on the current ch
 |long		| Long			| obj = new Long(10849L) 	|obj.longValue() 	|
 |float		| Float			| obj = new Float(3.934F) 	|obj.floatValue() 	|
 |double		| Double		| obj = new Double(3.934) 	|obj.doubleValue()	|
+
+###### Automatic Boxing and Unboxing:
+
+```java
+int j = 8;
+Integer a = new Integer(12);
+int k = a; 							// implicit call to a.intValue()
+int m = j + a;						// a is automatically unboxed before the addition
+a = 3 * m;							// result is automatically boxed before assignment
+Integer b = new Integer("-135");	// constructor accepts a String
+int n = Integer.parseInt("2013");	// using static method of Integer class
+```
+
+### 4.3  Arrays:
+
+Variables of an array type are _reference variables_
+
+The first way to create an array is to use an assignment to a literal form when initially declaring the array, using a syntax as:  
+> _elementType[] arrayName = {initialValue0, initial value1,...,initialValueN-1};_
+
+Example:
+```java
+int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+```
+
+The second wawy to create an array is to use the **new** operator.
+> **new** _elementType[length]_
+
+The **new** operator returns a reference to the new array, typically this would be assigned to an array variable. For example, the following statement declares an array variable named _measurements_, and immediately assigns it a new array of 1000 cells.
+```java
+double[] = measurements = new double[1000];
+
+### 4.4 Enum Types:
+
+Enum types are those that are only allowed to take values that come from a specified set of names. They are declared as follows:
+> _modifier **enum** name{ valueName0, valueName1, ..., valueNameN-1 };_
+```
