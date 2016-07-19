@@ -1,3 +1,6 @@
+/*
+	This is a singly non-circular linked list with sentinel node
+*/
 public class SLinkedList<T> {
 	private class Node {
 		T item;
