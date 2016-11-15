@@ -1,4 +1,6 @@
-public class LL<T> {
+import java.util.*;
+
+public class LL<T> implements Iterable<T> {
   public class Node<T> {
     private T value;
     private Node<T> next;
@@ -37,13 +39,37 @@ public class LL<T> {
     }
   }
 
-  Node<T> head, tail;
-  int size;
+  public Node<T> head, tail;
+  private int size;
 
   public LL() {
     this.head = new Node<T>();
     this.tail = this.head;
     this.size = 0;
+  }
+
+  public Iterator<T> iterator() {
+    return new LLIterator();
+  }
+
+  private class LLIterator implements Iterator<T> {
+    private Node<T> pointer;
+
+    private LLIterator() {
+      pointer = head.getNext();
+    }
+
+    public boolean hasNext() {
+      return this.pointer.getNext() != null;
+    }
+
+    public void remove() {}
+
+    public T next() {
+      T item = pointer.getValue();
+      pointer = pointer.getNext();
+      return item;
+    }
   }
 
   public int getSize() {
@@ -103,11 +129,13 @@ public class LL<T> {
     ll.push_back("Python");
     ll.push_back("C++");
     ll.push_back("C");
-    ll.pop_front();
 
-    System.out.println(ll);
-    System.out.println(ll.head);
-    System.out.println(ll.tail);
-    System.out.println(ll.getSize());
+    for (String e : ll)
+      System.out.println(e);
+
+    // System.out.println(ll);
+    // System.out.println(ll.head);
+    // System.out.println(ll.tail);
+    // System.out.println(ll.getSize());
   }
 }
