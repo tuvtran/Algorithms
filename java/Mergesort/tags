@@ -1,0 +1,7 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+main	/Users/tuvttran/Projects/Algorithms/java/Mergesort/Mergesort.java	/^  public static void main(String[] args) {$/;"	m	language:Java	class:Mergesort
+merge	/Users/tuvttran/Projects/Algorithms/java/Mergesort/Mergesort.java	/^  public static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {$/;"	m	language:Java	class:Mergesort
+Mergesort	/Users/tuvttran/Projects/Algorithms/java/Mergesort/Mergesort.java	/^public class Mergesort {$/;"	c	language:Java
+sort	/Users/tuvttran/Projects/Algorithms/java/Mergesort/Mergesort.java	/^  public static void sort(Comparable[] a) {$/;"	m	language:Java	class:Mergesort
+sort	/Users/tuvttran/Projects/Algorithms/java/Mergesort/Mergesort.java	/^  public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {$/;"	m	language:Java	class:Mergesort
+sortImproved1	/Users/tuvttran/Projects/Algorithms/java/Mergesort/Mergesort.java	/^  public static void sortImproved1(Comparable[] a, Comparable[] aux, int lo, int hi) {$/;"	m	language:Java	class:Mergesort
