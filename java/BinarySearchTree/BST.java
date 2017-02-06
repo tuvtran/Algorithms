@@ -76,8 +76,64 @@ public class BST<Key extends Comparable<Key>, Value> {
             return node.val;
     }
 
+    /**
+     * @param key to delete
+     */
     public void delete(Key key) {
+        root = delete(root, key);
+    }
+    /**
+     * @param node to start searching from
+     * @param key to delete
+     * @return node after deletion
+     */
+    private Node delete(Node node, Key key) {
+        if (node == null)
+            return null;
 
+        int cmp = key.compareTo(node.key);
+
+        if (cmp > 0)        // search right subtree
+            node.right = delete(node.right, key);
+        else if (cmp < 0)   // search left subtree
+            node.left = delete(node.left, key);
+        else {              // check for 3 cases
+            // Case 1 and 2: zero or 1 child
+            if (node.right == null)     // no right child
+                return node.left;
+            if (node.left == null)      // no right child
+                return node.right;
+
+            Node t = node;
+            node = min(t.right);            // minimum of right child
+            node.right = deleteMin(t.right);
+            node.left = t.left;
+        }
+        node.count = size(node.left) + size(node.right) + 1;
+        return node;
+    }
+
+    /**
+     * @param node to delete from
+     * @return node
+     */
+    private Node deleteMin(Node node) {
+        if (node.left == null)
+            return node.right;
+
+        node.left = deleteMin(node.left);
+        node.count = 1 + size(node.right) + size(node.left);
+        return node;
+    }
+
+    /**
+     * @param node
+     * @return node with minimum key
+     */
+    private Node findMin(Node node) {
+        if (node.left == null)
+            return node;
+        return findMin(node.right);
     }
 
     /**
