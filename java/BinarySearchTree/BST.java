@@ -105,7 +105,7 @@ public class BST<Key extends Comparable<Key>, Value> {
                 return node.right;
 
             Node t = node;
-            node = min(t.right);            // minimum of right child
+            node = findMin(t.right);            // minimum of right child
             node.right = deleteMin(t.right);
             node.left = t.left;
         }
