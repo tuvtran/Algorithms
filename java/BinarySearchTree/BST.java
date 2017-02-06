@@ -16,21 +16,22 @@ public class BST<Key extends Comparable<Key>, Value> {
     // root of BST
     private Node root; 
 
-    /*
-        key in tree => replace value
-        key not in tree => add new node
-
-        @param key and value
-    */
+    /**
+     * key in tree => replace value
+     * key node in tree => add new node
+     * @param key
+     * @param value
+     */
     public void put(Key key, Value val) {
         root = put(root, key, val);
     }
 
-    /*
-        helper function for put
-        @param node to start searching from, key, value
-        @return node after searching
-    */
+    /**
+     * @param node to start searching from 
+     * @param key
+     * @param value
+     * @return node after inserting
+     */
     private Node put(Node node, Key key, Value val) {
         if (node == null)
             return new Node(key, val);
@@ -48,17 +49,19 @@ public class BST<Key extends Comparable<Key>, Value> {
         return node;
     }
 
-    /*
-        @param key
-        @return value if key matches, otherwise null
+    /**
+    *    @param key
+    *    @return value if key matches, otherwise null
     */
     public Value get(Key key) {
         return get(root, key);
     }
 
-    /*
-        helper function for get()
-    */
+    /**
+     * @param node to start searching
+     * @param key
+     * @return value
+     */
     private Value get(Node node, Key key) {
         if (node == null) {
             return null;
@@ -77,21 +80,21 @@ public class BST<Key extends Comparable<Key>, Value> {
 
     }
 
-    /*
-        find the floor of a key
-        @param key
-        @return another key
-    */
+    /**
+     * find the floor of a key
+     * @param key
+     * @return another key
+     */
     public Key floor(Key key) {
         Node x = floor(root, key);
         return (x == null) ? null : x.key;
     }
 
-    /*
-        helper function for floor()
-        @param node to start from, key
-        @return node of the found key
-    */
+    /**
+     * @param node to start from
+     * @param key
+     * @return node of the found key
+     */
     private Node floor(Node node, Key key) {
         if (node == null)
             return null;
@@ -108,38 +111,34 @@ public class BST<Key extends Comparable<Key>, Value> {
         return (right == null) ? node : right;
     }
 
-    /*
-        return the size of the root
-        @param
-        @return size
-    */
+    /**
+     * @return size of the tree
+     */
     public int size() {
         return size(root);
     }
 
-    /*
-        return the size of a node
-        @param node
-        @return size
-    */
+    /**
+     * @param node
+     * @return size from the current node
+     */
     private int size(Node node) {
         return (node == null) ? 0 : node.count;
     }
 
-    /*
-        return the rank i.e the number of keys less than
-        @param key
-        @return number of keys
-    */
+    /**
+     * @param key to find rank
+     * @return rank
+     */
     public int rank(Key key) {
         return rank(root, key);
     }
 
-    /*
-        helper function for rank
-        @param node, key
-        @return number of keys
-    */
+    /**
+     * @param node to find rank from
+     * @param key
+     * @return rank
+     */
     private int rank(Node node, Key key) {
         if (node == null)
             return 0;
@@ -158,20 +157,20 @@ public class BST<Key extends Comparable<Key>, Value> {
             return size(node.left);
     }
 
-    /*
-        inorder traversal
-        @return queue storing keys
-    */
+    /**
+     * @return a queue storing keys
+     */
     public Iterable<Key> iterator() {
-        List<Key> queue = new ArrayList<>();
+        ArrayList<Key> queue = new ArrayList<>();
         inorder(root, queue);
         return queue;
     }
 
-    /*
-        helper function for iterator
-        inorder traversal of the tree
-    */
+    /**
+     * helper for iterator()
+     * @param current node
+     * @param queue
+     */
     private void inorder(Node node, ArrayList<Key> queue) {
         if (node == null)
             return;
