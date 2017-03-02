@@ -13,7 +13,9 @@ public class BST<Key extends Comparable<Key>, Value> {
         }
     }
 
-    // root of BST
+    /**
+     * reference to the root of the binary search tree
+     */
     private Node root; 
 
     /**
